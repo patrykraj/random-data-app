@@ -1,0 +1,13 @@
+div.header--container {
+  height: 100%;
+}
+
+div.header--container a.nav--logo {
+  height: 100%;
+  margin: 0;
+  padding: 5px 0;
+}
+
+div.header--container a.nav--logo img {
+  height: 100%;
+}

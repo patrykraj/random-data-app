@@ -1,0 +1,27 @@
+div.pagination button.pagination__btn {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: none;
+  padding: 0.5rem;
+  color: #3d78b8;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+div.pagination button.pagination__btn:last-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+div.pagination button.pagination__btn.active {
+  background-color: #3d78b8;
+  color: #efefef;
+}
+
+div.pagination button.pagination__btn.disabled {
+  color: rgba(0, 0, 0, 0.4);
+  cursor: default;
+}
+
+div.pagination button.pagination__btn.disabled:focus {
+  outline: none;
+}

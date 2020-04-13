@@ -1,0 +1,64 @@
+div.home--container table.data--list {
+  padding: 0.5rem 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+div.home--container table.data--list thead {
+  padding-bottom: 1rem;
+}
+
+div.home--container table.data--list thead tr th {
+  font-weight: bold;
+}
+
+div.home--container table.data--list tbody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 0.9rem;
+}
+
+div.home--container table.data--list tbody tr:last-child {
+  border: none;
+}
+
+div.home--container table.data--list tr {
+  width: 90%;
+  height: 62px;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+div.home--container table.data--list tr th {
+  flex: 1;
+  font-weight: 500;
+  text-align: left;
+}
+
+div.home--container h3.home--header {
+  font-weight: normal;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+div.home--container div.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-top: 3px solid rgba(0, 0, 0, 0.2);
+}

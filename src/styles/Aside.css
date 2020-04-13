@@ -1,0 +1,170 @@
+aside.aside {
+  position: fixed;
+  top: 0;
+  left: calc(-50% - 1px);
+  height: 100%;
+  width: 50%;
+  max-width: 250px;
+  display: flex;
+  color: #efefef;
+  z-index: 10;
+  transition: all 0.4s 0.2s;
+}
+
+aside.aside.menu__isOpen {
+  left: 0;
+}
+
+aside.aside div.aside--container {
+  overflow-y: auto;
+}
+
+a.nav--logo {
+  display: block;
+  margin: 1rem auto;
+  text-decoration: none;
+  color: #efefef;
+}
+
+a.nav--logo img {
+  width: 50%;
+}
+
+aside.aside div.menu--trigger__container {
+  position: absolute;
+  right: -69px;
+  width: 70px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--aside-bg-color);
+  border-radius: 0 0 50% 0;
+}
+
+aside.aside div.menu--trigger__container button.menu--trigger__btn {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  cursor: pointer;
+}
+
+aside.aside div.menu--trigger__container button.menu--trigger__btn:focus {
+  outline: none;
+}
+
+aside.aside div.menu--trigger__container span.menu--trigger__span,
+aside.aside div.menu--trigger__container span.menu--trigger__span:before,
+aside.aside div.menu--trigger__container span.menu--trigger__span:after {
+  border: none;
+  width: 100%;
+  height: 4px;
+  padding: 0;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background-color: #efefef;
+  transition: all 0.4s;
+}
+
+aside.aside div.menu--trigger__container span.menu--trigger__span:before,
+aside.aside div.menu--trigger__container span.menu--trigger__span:after {
+  content: "";
+  top: 10px;
+}
+
+aside.aside div.menu--trigger__container span.menu--trigger__span:after {
+  top: 20px;
+}
+
+aside.aside.menu__isOpen div.menu--trigger__container span.menu--trigger__span {
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+aside.aside.menu__isOpen
+  div.menu--trigger__container
+  span.menu--trigger__span:before {
+  display: none;
+  width: 0;
+}
+
+aside.aside.menu__isOpen
+  div.menu--trigger__container
+  span.menu--trigger__span:after {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+aside.aside--overlay {
+  position: absolute;
+  right: 0;
+  width: calc(50% + 1px);
+  min-width: calc(100% - 200px);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(100%);
+  transition: all 0.4s;
+  z-index: 9;
+}
+
+aside.aside.menu__isOpen ~ aside.aside--overlay {
+  transform: translateX(0);
+}
+
+aside.aside div.aside--container {
+  background-color: var(--aside-bg-color);
+  width: 100%;
+  padding: 1rem 0;
+}
+
+aside.aside div.aside--container ul.aside--options {
+  margin: 0;
+  padding: 2rem 0;
+  list-style: none;
+}
+
+aside.aside div.aside--container ul.aside--options a.aside--option {
+  text-decoration: none;
+  color: #efefef;
+  font-size: 1.2rem;
+}
+
+aside.aside div.aside--container ul.aside--options li {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 500px) {
+  aside.aside {
+    position: fixed;
+    left: -200px;
+    width: 200px;
+  }
+}
+
+@media (min-width: 720px) {
+  aside.aside {
+    left: 0;
+  }
+
+  aside.aside div.menu--trigger__container {
+    display: none;
+  }
+
+  aside.aside--overlay {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  aside.aside {
+    width: 250px;
+  }
+}

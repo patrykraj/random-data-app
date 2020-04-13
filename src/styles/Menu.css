@@ -1,0 +1,41 @@
+nav.menu ul.menu--list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 2rem 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav.menu ul.menu--list a.menu--link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #efefef;
+  display: block;
+  padding: 0.3rem 0;
+  border-left: 5px solid transparent;
+  transition: 0.2s all;
+  display: flex;
+  align-items: center;
+}
+
+nav.menu ul.menu--list a.menu--link span.material-icons {
+  margin: 0 1rem;
+  font-size: 1.25rem;
+}
+
+nav.menu ul.menu--list a.menu--link:hover {
+  border-left: 5px solid gray;
+  font-weight: bold;
+}
+
+nav.menu ul.menu--list a.menu--link:hover span.material-icons {
+  font-weight: bold;
+}
+
+nav.menu ul.menu--list a.menu--link.active {
+  color: orange;
+  font-weight: bold;
+  border-left: 5px solid orange;
+}
