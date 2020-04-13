@@ -29,7 +29,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <header className="header">{<Header />}</header>
           <aside className={menuIsOpen ? "aside menu__isOpen" : "aside"}>
             {<Aside handleMenu={this.handleMenu} />}
