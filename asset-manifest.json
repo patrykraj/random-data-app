@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/random-data-app/static/css/main.b5c2a4ee.chunk.css",
+    "main.js": "/random-data-app/static/js/main.e8fdd9ea.chunk.js",
+    "main.js.map": "/random-data-app/static/js/main.e8fdd9ea.chunk.js.map",
+    "runtime-main.js": "/random-data-app/static/js/runtime-main.b9e7bc7f.js",
+    "runtime-main.js.map": "/random-data-app/static/js/runtime-main.b9e7bc7f.js.map",
+    "static/css/2.ba989b92.chunk.css": "/random-data-app/static/css/2.ba989b92.chunk.css",
+    "static/js/2.032ba854.chunk.js": "/random-data-app/static/js/2.032ba854.chunk.js",
+    "static/js/2.032ba854.chunk.js.map": "/random-data-app/static/js/2.032ba854.chunk.js.map",
+    "index.html": "/random-data-app/index.html",
+    "precache-manifest.c4d5714de42ee87b5a0fa846fc4ba35a.js": "/random-data-app/precache-manifest.c4d5714de42ee87b5a0fa846fc4ba35a.js",
+    "service-worker.js": "/random-data-app/service-worker.js",
+    "static/css/2.ba989b92.chunk.css.map": "/random-data-app/static/css/2.ba989b92.chunk.css.map",
+    "static/css/main.b5c2a4ee.chunk.css.map": "/random-data-app/static/css/main.b5c2a4ee.chunk.css.map",
+    "static/js/2.032ba854.chunk.js.LICENSE.txt": "/random-data-app/static/js/2.032ba854.chunk.js.LICENSE.txt",
+    "static/media/react-router.svg": "/random-data-app/static/media/react-router.02419671.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b9e7bc7f.js",
+    "static/css/2.ba989b92.chunk.css",
+    "static/js/2.032ba854.chunk.js",
+    "static/css/main.b5c2a4ee.chunk.css",
+    "static/js/main.e8fdd9ea.chunk.js"
+  ]
+}
