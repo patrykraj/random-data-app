@@ -6,6 +6,7 @@ import Stats from "../pages/Stats";
 import Data from "../pages/Data";
 import About from "../pages/About";
 import Error from "../pages/Error";
+import Loader from "../components/Loader";
 
 class Page extends Component {
   state = {
@@ -87,12 +88,7 @@ class Page extends Component {
   render() {
     const { data, loadingData, chartData } = this.state;
 
-    if (loadingData)
-      return (
-        <div className="loader--container page--container">
-          <p>Loading data...</p>
-        </div>
-      );
+    if (loadingData) return <Loader />;
 
     return (
       <Switch>
@@ -103,11 +99,8 @@ class Page extends Component {
             <Home {...props} data={data} loadingData={loadingData} />
           )}
         />
-        <Route
-          path="/stats"
-          render={(props) => <Stats chartData={chartData} />}
-        />
-        <Route path="/data" render={(props) => <Data />} />
+        <Route path="/stats" render={() => <Stats chartData={chartData} />} />
+        <Route path="/data" render={() => <Data />} />
         <Route path="/about" component={About} />
         <Route component={Error} />
       </Switch>

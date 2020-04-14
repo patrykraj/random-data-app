@@ -4,6 +4,9 @@ import Swiper from "react-id-swiper";
 import Slide from "../components/Slide";
 import "../styles/About.css";
 
+import { useSpring, animated } from "react-spring";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+
 const About = () => {
   const swiperParams = {
     slidesPerView: 1,
@@ -55,53 +58,66 @@ const About = () => {
     },
   ];
 
+  const props = useSpring({
+    from: { opacity: 0, transform: "translate3d(40px,0,0)" },
+    to: { opacity: 1, transform: "translate3d(0,0px,0)" },
+  });
+
   return (
     <div className="about--container page--container">
-      <div className="swiper--wrapper">
-        <button className="swiper__btn" aria-label="Previous">
-          {"<"}
-        </button>
-        <Swiper {...swiperParams}>
-          {slides.map((slide) => (
-            <div className={"slide"} key={slide.id}>
-              <Slide item={slide} />
-            </div>
-          ))}
-        </Swiper>
-        <button className="swiper__btn" aria-label="Next">
-          {">"}
-        </button>
-      </div>
-      <article className="about--info">
-        <h1>Lorem ipsum</h1>
-        <p>
-          Dolor sit amet, consectetur adipiscing elit. Morbi finibus lorem
-          ligula, non scelerisque velit convallis vitae. Fusce in vulputate
-          odio, non tristique odio. Donec blandit viverra quam vel lacinia.
-          Donec ullamcorper non tortor ac dapibus. Praesent ultricies interdum
-          lectus vitae fringilla. Praesent lectus lacus, maximus eu ante quis,
-          dictum volutpat turpis. Vestibulum scelerisque venenatis dignissim.
-          Vivamus quis malesuada dolor. Mauris bibendum enim nunc. Phasellus
-          vulputate tristique diam, ut volutpat nulla lobortis ac. Sed elementum
-          sodales lobortis.
-        </p>
+      <animated.div style={props}>
+        <div className="swiper--wrapper">
+          <button className="swiper__btn" aria-label="Previous">
+            <FaAngleLeft />
+          </button>
+          <Swiper {...swiperParams}>
+            {slides.map((slide) => (
+              <div className={"slide"} key={slide.id}>
+                <Slide item={slide} />
+              </div>
+            ))}
+          </Swiper>
+          <button className="swiper__btn" aria-label="Next">
+            <FaAngleRight />
+          </button>
+        </div>
+        <article
+          className="about--info"
+          style={{
+            overflow: "hidden",
+          }}
+        >
+          <h1>Lorem ipsum</h1>
+          <p>
+            Dolor sit amet, consectetur adipiscing elit. Morbi finibus lorem
+            ligula, non scelerisque velit convallis vitae. Fusce in vulputate
+            odio, non tristique odio. Donec blandit viverra quam vel lacinia.
+            Donec ullamcorper non tortor ac dapibus. Praesent ultricies interdum
+            lectus vitae fringilla. Praesent lectus lacus, maximus eu ante quis,
+            dictum volutpat turpis. Vestibulum scelerisque venenatis dignissim.
+            Vivamus quis malesuada dolor. Mauris bibendum enim nunc. Phasellus
+            vulputate tristique diam, ut volutpat nulla lobortis ac. Sed
+            elementum sodales lobortis.
+          </p>
 
-        <h2>Curabitur nisl</h2>
-        <p>
-          Magna, hendrerit et ornare vel, venenatis eget nibh. Integer posuere
-          vel ante at lacinia. Etiam lobortis orci ut urna facilisis lobortis.
-          Nam facilisis ipsum porta sollicitudin volutpat. Fusce tempor
-          consectetur fermentum. Duis ut massa nec enim mattis ornare. Praesent
-          luctus, dolor sed elementum dignissim, sapien enim eleifend est, at
-          semper ex magna vitae metus. Sed turpis est, condimentum a ipsum ac,
-          bibendum egestas nulla. Nam suscipit neque in arcu hendrerit, vel
-          sagittis ipsum sodales. Ut ut varius ligula. Aliquam eget elit nec
-          diam ornare varius eget ut purus. Maecenas congue enim nec tempus
-          hendrerit. Curabitur venenatis gravida sem, sed lobortis metus lacinia
-          id. Pellentesque non laoreet sapien. Orci varius natoque penatibus et
-          magnis dis parturient montes, nascetur ridiculus mus.
-        </p>
-      </article>
+          <h2>Curabitur nisl</h2>
+          <p>
+            Magna, hendrerit et ornare vel, venenatis eget nibh. Integer posuere
+            vel ante at lacinia. Etiam lobortis orci ut urna facilisis lobortis.
+            Nam facilisis ipsum porta sollicitudin volutpat. Fusce tempor
+            consectetur fermentum. Duis ut massa nec enim mattis ornare.
+            Praesent luctus, dolor sed elementum dignissim, sapien enim eleifend
+            est, at semper ex magna vitae metus. Sed turpis est, condimentum a
+            ipsum ac, bibendum egestas nulla. Nam suscipit neque in arcu
+            hendrerit, vel sagittis ipsum sodales. Ut ut varius ligula. Aliquam
+            eget elit nec diam ornare varius eget ut purus. Maecenas congue enim
+            nec tempus hendrerit. Curabitur venenatis gravida sem, sed lobortis
+            metus lacinia id. Pellentesque non laoreet sapien. Orci varius
+            natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus.
+          </p>
+        </article>
+      </animated.div>
     </div>
   );
 };

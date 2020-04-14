@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Pagination.css";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Pagination = (props) => {
   const paginationLength = Math.ceil(props.data.length / props.usersPerPage);
@@ -36,7 +37,8 @@ const Pagination = (props) => {
           }
           onClick={() => props.paginate(1)}
         >
-          {"<<"}
+          <FaAngleLeft />
+          <FaAngleLeft />
         </button>
         <button
           className={
@@ -46,7 +48,7 @@ const Pagination = (props) => {
           }
           onClick={() => props.paginate(props.currentPage - 1)}
         >
-          {"<"}
+          <FaAngleLeft />
         </button>
         {buttons}
         <button
@@ -57,7 +59,7 @@ const Pagination = (props) => {
           }
           onClick={() => props.paginate(props.currentPage + 1)}
         >
-          {">"}
+          <FaAngleRight />
         </button>
         <button
           className={
@@ -67,7 +69,8 @@ const Pagination = (props) => {
           }
           onClick={() => props.paginate(paginationLength)}
         >
-          {">>"}
+          <FaAngleRight />
+          <FaAngleRight />
         </button>
       </div>
     </nav>
