@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "swiper/css/swiper.css";
 import Swiper from "react-id-swiper";
 import Slide from "../components/Slide";
@@ -6,6 +6,13 @@ import "../styles/About.css";
 
 import { useSpring, animated } from "react-spring";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+
+import image1 from "../images/1.jpg";
+import image2 from "../images/2.jpg";
+import image3 from "../images/3.jpg";
+import image4 from "../images/4.jpg";
+import image5 from "../images/5.jpg";
+import image6 from "../images/6.jpg";
 
 const About = () => {
   const swiperParams = {
@@ -28,35 +35,43 @@ const About = () => {
   const slides = [
     {
       id: 0,
-      url:
-        "https://images.unsplash.com/photo-1516542076529-1ea3854896f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      src: image1,
     },
     {
       id: 1,
-      url:
-        "https://images.unsplash.com/photo-1516542076529-1ea3854896f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      src: image2,
     },
     {
       id: 2,
-      url:
-        "https://images.unsplash.com/photo-1516542076529-1ea3854896f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      src: image3,
     },
     {
       id: 3,
-      url:
-        "https://images.unsplash.com/photo-1516542076529-1ea3854896f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      src: image4,
     },
     {
       id: 4,
-      url:
-        "https://images.unsplash.com/photo-1516542076529-1ea3854896f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      src: image5,
     },
     {
       id: 5,
-      url:
-        "https://images.unsplash.com/photo-1516542076529-1ea3854896f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      src: image6,
     },
   ];
+
+  const [swiper, setSwiper] = useState(null);
+
+  const goNext = () => {
+    if (swiper !== null) {
+      swiper.slideNext();
+    }
+  };
+
+  const goPrev = () => {
+    if (swiper !== null) {
+      swiper.slidePrev();
+    }
+  };
 
   const props = useSpring({
     from: { opacity: 0, transform: "translate3d(40px,0,0)" },
@@ -67,17 +82,21 @@ const About = () => {
     <div className="about--container page--container">
       <animated.div style={props}>
         <div className="swiper--wrapper">
-          <button className="swiper__btn" aria-label="Previous">
+          <button
+            onClick={goPrev}
+            className="swiper__btn"
+            aria-label="Previous"
+          >
             <FaAngleLeft />
           </button>
-          <Swiper {...swiperParams}>
+          <Swiper {...swiperParams} getSwiper={setSwiper}>
             {slides.map((slide) => (
               <div className={"slide"} key={slide.id}>
                 <Slide item={slide} />
               </div>
             ))}
           </Swiper>
-          <button className="swiper__btn" aria-label="Next">
+          <button onClick={goNext} className="swiper__btn" aria-label="Next">
             <FaAngleRight />
           </button>
         </div>
